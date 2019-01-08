@@ -40,6 +40,10 @@ public class LeadershipTeamPage {
                 outputFile.delete();
             }
             CsvWriter csvWriter = new CsvWriter(new FileWriter(outputFilePath, true), ',');
+            csvWriter.write("\u001BLeadership Name");
+            csvWriter.write("\u001BPosition");
+            csvWriter.write("\u001BDescription");
+            csvWriter.endRecord();
             for (int i = 0; i < count; i++) {
                 csvWriter.write(leaderShipNames.get(i).getText());
                 csvWriter.write(leaderShipPositions.get(i).getText());
@@ -47,7 +51,8 @@ public class LeadershipTeamPage {
                 csvWriter.endRecord();
             }
             csvWriter.close();
-            FileUtil.LOGGER.info("Successfully saved leadership details to .csv file in output folder");
+            FileUtil.LOGGER
+                    .info("Successfully saved leadership details to .csv file in output folder");
         } catch (IOException e) {
             FileUtil.LOGGER.info("leaderShipDetails.csv file not found");
         }
