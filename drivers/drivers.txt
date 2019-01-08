@@ -1,0 +1,2 @@
+Download the chrome driver from below path and place in drivers folder in root directory. 
+https://chromedriver.storage.googleapis.com/index.html?path=2.45/
